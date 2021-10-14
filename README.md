@@ -5,6 +5,7 @@
 ## create a new env 
 ```bash
 conda create --prefix ./env python=3.7 -y
+```
 
 ## activate new env 
 ```bash
