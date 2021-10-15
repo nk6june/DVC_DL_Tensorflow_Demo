@@ -32,5 +32,7 @@ touch src/__init__.py src/utils/__init__.py param.yaml dvc.yaml config/config.ya
 ```
 
 ## install src
-
+```bash
+pip install -e .
+```
 
