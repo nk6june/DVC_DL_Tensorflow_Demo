@@ -1,13 +1,12 @@
 import yaml 
 import os
 import json
-# import logging
+import logging
 
 ##Reading Yaml Path and returns it
 def read_yaml(path_to_yaml: str) -> dict:
     with open(path_to_yaml) as yaml_file:
         content = yaml.safe_load(yaml_file)
-    # logging.info(f"yaml file: {path_to_yaml} loaded succesfully")
     return content
 
 ##Creating Directories
