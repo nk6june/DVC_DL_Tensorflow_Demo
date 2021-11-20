@@ -1,7 +1,8 @@
 from src.utils.all_utils import read_yaml, create_directory
 from src.utils.models import load_full_model, get_unique_path_to_save_model
 from src.utils.callbacks import get_callbacks
-# from src.utils.data_management import train_valid_generator
+from src.utils.data_management import train_valid_generator
+
 import argparse
 import os
 import logging
@@ -30,7 +31,16 @@ def train_model(config_path, params_path):
     callback_dir_path  = os.path.join(artifacts_dir, artifacts["CALLBACKS_DIR"])
     callbacks = get_callbacks(callback_dir_path)
 
+    train_generator, valid_generator = train_valid_generator(
+        data_dir=artifacts["DATA_DIR"],
+        IMAGE_SIZE=tuple(params["IMAGE_SIZE"][:-1]),
+        BATCH_SIZE=params["BATCH_SIZE"],
+        do_data_augmentation=params["AUGMENTATION"]
+    )
+
     
+
+
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
 
